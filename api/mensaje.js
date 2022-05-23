@@ -35,7 +35,7 @@ class Mensaje {
                     fecha: mensaje.fecha
                 }
                 arrayMensajes.push(objetoAgregar)
-                this.#fs.promises.writeFile(`./public/${this.ruta}.txt`, JSON.stringify(arrayMensajes, null, '\t'))
+                await this.#fs.promises.writeFile(`./public/${this.ruta}.txt`, JSON.stringify(arrayMensajes, null, '\t'))
 
             }
             return arrayMensajes;

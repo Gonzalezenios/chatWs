@@ -22,7 +22,6 @@ io.on('connection', async socket => {
     socket.on('nuevo-mensaje', mensaje => {
         mensajes.guardar(mensaje).then(contenido => {
             io.sockets.emit('mensajes', mensajes.leer());
-            console.log(mensaje.leer());
         }).catch(error => { console.log(error) })
 
     });
